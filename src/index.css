@@ -2,39 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* LUNOX CHEATS Gaming Design System - Black, Red, White Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Gaming Colors */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 84% 60%;
+
+    /* Gaming Enhancement Colors */
+    --gaming-red: 0 84% 60%;
+    --gaming-red-dark: 0 84% 45%;
+    --gaming-red-light: 0 84% 75%;
+    --gaming-black: 0 0% 8%;
+    --gaming-dark: 0 0% 12%;
+    --gaming-white: 0 0% 98%;
+    --gaming-gray: 0 0% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gaming-red)), hsl(var(--gaming-red-dark)));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--gaming-black)), hsl(var(--gaming-dark)));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--gaming-red) / 0.2), hsl(var(--gaming-red-dark) / 0.1));
+
+    /* Shadows & Effects */
+    --shadow-gaming: 0 10px 30px -10px hsl(var(--gaming-red) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--gaming-red) / 0.4);
+    --shadow-dark: 0 4px 12px hsl(0 0% 0% / 0.5);
+
+    /* Animations */
+    --transition-gaming: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s ease;
 
     --radius: 0.5rem;
 
@@ -100,6 +124,70 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  /* Gaming Component Styles */
+  .gaming-glow {
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-glow);
+  }
+
+  .gaming-glow:hover {
+    box-shadow: 0 0 60px hsl(var(--gaming-red) / 0.6);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border-image: var(--gradient-primary) 1;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@layer components {
+  /* Gaming Button Variants */
+  .btn-gaming {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    box-shadow: var(--shadow-gaming);
+  }
+
+  .btn-gaming:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-outline-gaming {
+    @apply border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105;
+  }
+
+  /* Card Styles */
+  .card-gaming {
+    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300 hover:scale-105;
+    box-shadow: var(--shadow-dark);
+  }
+
+  .card-gaming:hover {
+    box-shadow: var(--shadow-gaming);
+  }
+
+  /* Contact Buttons */
+  .btn-whatsapp {
+    @apply bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-discord {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-telegram {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105;
   }
 }
