@@ -84,9 +84,9 @@ const Home = () => {
             <div className="animate-slide-in-right">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/dfc3baea-f515-4383-8d96-b01e7423d0b4.png" 
+                  src="/lovable-uploads/0cc76d85-f6fc-43d8-a558-dd9a66bc39b5.png" 
                   alt="LUNOX CHEATS - Professional Gaming Tools" 
-                  className="w-full max-w-md mx-auto gaming-glow animate-float"
+                  className="w-full max-w-md mx-auto gaming-glow animate-float rounded-lg"
                 />
               </div>
             </div>
