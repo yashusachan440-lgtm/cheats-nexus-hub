@@ -24,7 +24,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 animate-fade-in">
             <img 
-              src="/lovable-uploads/3d247ad3-cf1e-4d03-9e16-a4aabb18c213.png" 
+              src="/lovable-uploads/5ba500e6-5cba-4e01-9457-e880271730a4.png" 
               alt="LUNOX CHEATS" 
               className="h-10 w-10 gaming-glow"
             />
